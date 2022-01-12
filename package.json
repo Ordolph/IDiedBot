@@ -2,7 +2,7 @@
   "name": "idiedbot",
   "version": "1.0.0",
   "description": "Bot to respond to comments containing 'I died' or 'This killed me'",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ordolph/IDiedBot#readme",
   "dependencies": {
+    "dotenv": "^11.0.0",
     "snoostorm": "^1.5.2",
     "snoowrap": "^1.23.0"
   }
