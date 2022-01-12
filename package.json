@@ -1,0 +1,23 @@
+{
+  "name": "idiedbot",
+  "version": "1.0.0",
+  "description": "Bot to respond to comments containing 'I died' or 'This killed me'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ordolph/IDiedBot.git"
+  },
+  "author": "Austin Randolph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ordolph/IDiedBot/issues"
+  },
+  "homepage": "https://github.com/Ordolph/IDiedBot#readme",
+  "dependencies": {
+    "snoostorm": "^1.5.2",
+    "snoowrap": "^1.23.0"
+  }
+}
