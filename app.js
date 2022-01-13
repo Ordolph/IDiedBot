@@ -16,8 +16,8 @@ const client = new Snoowrap(r);
 
 //Set options for comment stream
 const streamOpts = {
-  subreddit: "BotTestSubreddit1",
-  limit: 1,
+  subreddit: "Animemes",
+  polltime: 2000,
 };
 
 //Create comment stream
@@ -26,17 +26,24 @@ const comments = new Snoostorm.CommentStream(client, streamOpts);
 //Bot start function
 const start = function () {
   comments.on("item", (item) => {
-    console.log(item);
     let commentDateMS = item.created_utc * 1000;
     let currentTime = Date.now();
-    if (
-      item.body.toLowerCase().includes("i died") || item.body.toLowerCase().includes("killed me")
-      && commentDateMS + 300000 >= currentTime
-    ) {
-      console.log("I have been summoned!");
-      item.reply(`RIP ${item.author.name}`)
+    if (commentDateMS + 60000 >= currentTime) {
+      if (
+        item.body.toLowerCase().includes("i died") ||
+        item.body.toLowerCase().includes("killed me")
+      ) {
+        console.log(item);
+        console.log("I have been summoned!");
+        item.reply(`RIP ${item.author.name}`);
+      }
     }
   });
 };
 
 start();
+
+comments.on("end", function () {
+  console.log("Ended, attempting to restart");
+  start();
+});
